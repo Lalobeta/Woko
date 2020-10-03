@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+    has_one_attached :profile_picture, dependent: :destroy
+    validates :profile_picture, content_type: [:png, :jpg, :jpeg]
+
+
   after_create :set_default_role
   belongs_to :role, optional: true
   def full_name

@@ -24,6 +24,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def delete_image
+    image = ActiveStorage::Attachment.find(params[:image_id])
+    if current_user == image.record || current_user.admin?
+      image.purge
+      redirect_back(fallback_location: request.referer)
+    else
+      redirect_to root_url, notice: "Ah ah ah, you didn't say the magic word"
+    end
+  end 
+
   private 
   
   def user_params
@@ -31,6 +41,7 @@ class UsersController < ApplicationController
       :bio,
       :first_name,
       :last_name,
+      :profile_picture,
     )
   end
 end

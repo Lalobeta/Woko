@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  published: false
+  at: 2020-10-01 15:28:51
+  instructor: one
+
+two:
+  title: MyString
+  description: MyText
+  published: false
+  at: 2020-10-01 15:28:51
+  instructor: two

@@ -1,0 +1,3 @@
+class ImageElementsController < ApplicationController
+    
+end

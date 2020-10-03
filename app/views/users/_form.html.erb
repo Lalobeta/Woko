@@ -22,17 +22,41 @@
     </div>
 
     <div class="form-group">
+        <% if user.profile_picture.attached? && user.profile_picture.representable? %>
+            <%= image_tag user.profile_picture.variant(resize: '100x100').processed %>
+            <div class="upload-hider-labels">
+            <%= link_to '#', class: 'replace-upload' do %>
+                Replace Current Image
+            <%end%>
+            <span class="seperator-bar">|</span>
+                <%= link_to 'Remove Image without replacing',
+                             delete_image_user_url(image_id: user.profile_picture.id),
+                             method: :delete,
+                             data: {confirm: 'Are you sure?'},
+                             class: 'remove-upload'
+                %>
+            </div>
+        <% else %>
+            <div class="profile-picture no-profile-picture">
+            </div>
+        <% end %>
+
+        <div class="upload-hider-fields">
+            <%= form.file_field :profile_picture, class: 'form-control' %>
+        </div>
+    </div>
+
+    
+    
+    <div class="form-group">
         <%= form.label :bio %>
         <%= form.text_area :bio, class: 'form-control' %>
     </div>
+
 
     <div class="actions">
         <%= form.submit class: 'btn btn-primary' %>
         <%= link_to 'Cancel', users_path, class: 'btn btn-secondary' %>
     </div>
     
-<%end%>
-
-
-
-    
+<%end%>    
