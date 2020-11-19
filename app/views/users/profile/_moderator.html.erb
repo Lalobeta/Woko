@@ -1,0 +1,16 @@
+ <h1><%= @user.full_name %> </h1>
+    
+        <p><strong>Moderator: </strong> <%=@user.moderator? %> </p>
+      
+        
+      <h2>Bio </h2>
+      <p> <%if @user.bio? %>
+          <%= @user.bio.html_safe %>
+          <%else%>
+          <%= @user.bio %>
+          <%end%>
+       </p>
+
+      <%if current_user.id == @user.id %>
+        <%= link_to 'Editar Perfil', edit_user_path(current_user), class: 'btn btn-primary' %>
+      <% end %>

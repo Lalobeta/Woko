@@ -1,0 +1,19 @@
+
+<%= simple_form_for (@wiki) do |f| %>
+
+  <div class="form-group">
+    <%= f.input :title, label: 'Titulo', error: 'El titulo es obligatorio, por favor especifique uno de minimo 5 caracteres' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :description, as: :summernote , error: 'La descripcion es obligatoria, por favor especifique una'  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :content, as: :summernote  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.button :submit ,class: 'btn btn-primary' %>
+  </div>
+<% end %>

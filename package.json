@@ -1,0 +1,10 @@
+{
+  "name": "woko",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.4",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+    "simpleform": "^0.1.3"
+  }
+}

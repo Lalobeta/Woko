@@ -1,0 +1,116 @@
+
+<div class="container">
+
+<h1>Bienvenido</h1>
+
+<br>
+
+    <section class="contenedor seccion">
+        <table class="table table-grey">
+            <tbody>
+             
+              <tr>
+                
+                <td>  <%= link_to "Español",{:controller => "wikis"},{ class: 'btn btn-outline-danger btn-lg btn-block'}%> </td>
+                <td> <%= link_to "Matematicas", {:controller => "wikis"}, {class: 'btn btn-outline-success  btn-lg btn-block' }%> </td>
+                <td><%= link_to "Biologia", {:controller => "wikis"} , {class: 'btn btn-outline-info  btn-lg btn-block'}%> </td>
+              </tr>
+              <tr>
+               
+                <td> <%= link_to "Idiomas",{:controller => "wikis"},{ class: 'btn btn-outline-danger btn-lg btn-block'}%> </td>
+                <td><%= link_to "Derecho", {:controller => "wikis"}, {class: 'btn btn-outline-success  btn-lg btn-block'} %></td>
+                <td><%= link_to "Fisica", {:controller => "wikis"}, {class: 'btn btn-outline-info btn-lg btn-block'}  %></td>
+              </tr>
+              <tr>
+                
+                <td> <%= link_to "Desarollo",{:controller => "wikis"},{ class: 'btn btn-outline-danger btn-lg btn-block'}%> </td>
+                <td><%= link_to "Portugues",{:controller => "wikis"} ,{ class: 'btn btn-outline-success  btn-lg btn-block'}%></td>
+                <td><%= link_to "Musica", {:controller => "wikis"},{class: 'btn btn-outline-info  btn-lg btn-block'}%></td>
+              </tr>
+            </tbody>
+          </table>
+
+    </section>
+
+
+    <section class="contenedor seccion">
+        <h2 class="fw-300 centrar-texto">Mas sobre nosotros</h2>
+        
+        <div class="iconos-nosotros">
+            <div class="icono">
+               
+                <h3 class="encabezado">Quienes somos</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat maxime consectetur libero inventore, earum blanditiis iusto qui deleniti laudantium modi sit corrupti consequatur nulla voluptas. Obcaecati reiciendis quis non doloribus?</p>
+            </div>
+
+            <div class="icono">
+               
+                <h3 class="encabezado">Objetivo</h3>
+                <p>dolor sit amet consectetur adipisicing elit. Sit, eos natus laborum ab cumque tempora earum deserunt. Quo aliquid maiores earum aspernatur amet? Dicta laborum voluptate deserunt praesentium officiis quas?</p>
+            </div>
+
+        </div>
+
+
+       
+
+    </section>
+        
+    <main class="contenedor seccion">
+        <h2 class="fw-300 centrar-texto">Capacitaciones</h3>
+        
+        <div class="contenedor-anuncios">
+            <div class="anuncio">
+                
+                <div class="contenido-anuncio">
+                    <h4>Capacitacion en android</h4>
+                    <p>Escrita el: 20/08/2019 por: Admin</p>
+                    <p>En esta capacitacion se busca que puedas aprender el como crear una aplicacion desde 0 </p>
+               
+                   <%= link_to 'Nuevo post', {:controller => "wikis"}, {class: 'btn btn-info btn-lg btn-block'} %>
+                </div>
+            </div>
+
+            <div class="anuncio">
+              
+                <div class="contenido-anuncio">
+                    <h4>Capacitacion en Java</h4>
+                    <p>Escrita el: 20/08/2019 por: Admin</p>
+                    <p>En esta capacitacion se busca que puedas aprender el como crear una aplicacion desde 0 </p>
+                    <%= link_to 'Nuevo post', {:controller => "wikis"}, {class: 'btn btn-info btn-lg btn-block'} %>
+                </div>
+            </div>
+        </div>
+        
+        
+    </main>
+
+  
+    </section>
+
+    <div class="seccion-inferior contenedor seccion">
+        <section class="blog">
+            <h3 class="fw-300 centrar-texto">Nuestro Blog</h3>
+
+
+
+
+
+
+        </section>
+   
+        <section class="testimoniales">
+            <h3 class="fw-300 centrar-texto">Testimoniales</h3>
+            <div class="testimonial">  
+                <blockquote>
+                   Tus talentos y habilidades iran mejorando con el tiempo, pero para eso has de empezar 
+                                   </blockquote>
+                <p>- Martin Luther King</p>
+            </div>
+        </section>
+    </div>
+
+
+</div>
+
+

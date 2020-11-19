@@ -1,0 +1,28 @@
+ 
+<header id="hero" class="position-relative overflow-hidden text-center">
+  <div class="col-md-5 mx-3 my-2">
+    <div class="hero-text">
+    <h1 class="display-4 font-weight-normal" >Articulo</h1>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+<p>
+  <h1 class="display-3"><%= @wiki.title %></h1>
+  
+</p>
+
+<p class="lead">
+  
+  <%= @wiki.content.html_safe %>
+</p>
+
+
+<% if current_user.author? %>
+  <%= link_to 'Back', :action => :index %> |
+  <%= link_to 'Edit', :action => :edit, :id => @wiki.id %>
+<%else%>
+  <%= link_to 'Back', :action => :index %>
+<%end%>
+</div>

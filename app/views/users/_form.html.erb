@@ -1,0 +1,59 @@
+
+<%= simple_form_for (@user) do |f| %>
+  <div class="form-group">
+    <% if user.profile_picture.attached? && user.profile_picture.representable? %>
+      <%= image_tag user.profile_picture.variant(resize: '200x200').processed %>
+      <div class="upload-hider-labels">
+      <%= link_to '#', class: 'replace-upload' do %>
+        Remplazar la imagen actual
+      <% end %>
+      <span class="separator-bar">|</span>
+        <%= link_to 'Eliminar Imagen sin remplazar',
+                     delete_image_user_url(image_id: user.profile_picture.id),
+                     method: :delete,
+                     data: { confirm: 'Estas seguro?'},
+                     class: 'remove-upload'
+        %>
+      </div>
+    <% else %>
+      <div class="profile-picture no-profile-picture"> </div>
+    <%end%>
+
+    <div class="upload-hider-fields">
+      <%= f.file_field :profile_picture, class: 'form-control' %>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <%= f.input :first_name, label: 'Nombre', error: 'El nombre es obligatorio, por favor especifique uno' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :last_name, label: 'Apellido' , error: 'El nombre es obligatoria, por favor especifique uno'  %>
+  </div>
+
+  
+
+  <div class="form-group">
+    <%= f.input :bio, as: :summernote  %>
+  </div>
+  
+ 
+  
+  <div class="form-check" style="margin-bottom: 10px;">
+    <input class="form-check-input" type="checkbox" id="gridCheck1">
+    <label class="form-check-label" for="gridCheck1">
+         Cambiar a autor
+         <% current_user.change_role %>
+    </label>
+    </div>
+      
+      
+
+
+  <div class="form-group">
+    <%= f.button :submit ,class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', users_path, class: 'btn btn-secondary'%>
+  </div>
+<% end %>

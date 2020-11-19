@@ -1,0 +1,22 @@
+
+<div class="container-fluid py-5 px-5">
+  <div class="row">
+   <div class="col-4">
+      <% if @user.profile_picture.attached? %>
+        <%= image_tag url_for(@user.profile_picture.variant(resize: '500x500').processed),
+          class: 'img-fluid'%>
+      <% else %>
+        <div class="profile-picture no-profile-picture"></div>
+      <% end %>
+    </div>
+
+
+    <div class="col-8">
+    <% if lookup_context.template_exists?(current_user.role.code, "users/profile", true)%>
+      <%= render partial: "users/profile/#{current_user.role.code}", locals: { user: @user }%>
+    <%else%>
+      <%= render partial: 'users/profile/member', locals: { user: @user} %>
+    <%end%>       
+    </div> 
+  </div>
+</div>
