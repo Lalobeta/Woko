@@ -80,7 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['DATABASE_URL']
+  database: <%= ENV['DATABASE_URL'] %>
 
   #username: learneen
   #password: <%= ENV['LEARNEEN_DATABASE_PASSWORD'] %>
