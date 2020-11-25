@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  resources :wikis
-
+  resources :wikis do
+    member do
+      put 'like' => 'wikis#like'
+    end
+  end
+  mount Commontator::Engine => '/commontator'
 
 
   post 'wikis' => "wikis#create"

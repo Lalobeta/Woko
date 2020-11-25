@@ -1,4 +1,7 @@
 class WikisController < ApplicationController
+
+  before_action :authenticate_user!, only: [:like]
+
   def new
     @wiki = Wiki.new
   end
@@ -14,6 +17,7 @@ class WikisController < ApplicationController
 
   def show
     @wiki = Wiki.find(params[:id])
+    commontator_thread_show(@wiki)
   end
 
   def index
@@ -41,6 +45,14 @@ class WikisController < ApplicationController
     redirect_to :action => :index
   end
 
+  def like
+    @wiki= Wiki.find(params[:id])
+    if current_user.voted_for? @wiki
+      @wiki.unliked_by current_user
+    else
+      @wiki.liked_by current_user
+    end
+  end
   private
     def wiki_params
       params.require(:wiki).permit(:id,:title, :content, :description)

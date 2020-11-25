@@ -18,11 +18,24 @@
   <%= @wiki.content.html_safe %>
 </p>
 
+<div id= "like-count"> 
+  <%= render 'wikis/likes', wiki: @wiki %>
+</div>
 
-<% if current_user.author? %>
+<div id= "like-link"> 
+  <%= render 'wikis/like_link', wiki: @wiki %>
+</div>
+
+
+
+
+<%= commontator_thread (@wiki) %>
+
+<% if not current_user.author? %>
+ 
+   <%= link_to 'Back', :action => :index %>
+<%else%>
   <%= link_to 'Back', :action => :index %> |
   <%= link_to 'Edit', :action => :edit, :id => @wiki.id %>
-<%else%>
-  <%= link_to 'Back', :action => :index %>
 <%end%>
 </div>

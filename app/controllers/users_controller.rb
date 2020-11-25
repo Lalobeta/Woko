@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :authenticate_user!, only: [:show]
   def index
     @users = User.all
@@ -33,6 +34,11 @@ class UsersController < ApplicationController
     else
       redirect_to root_url, notice:"OPPS, No dijiste la palabra magica!!"
     end
+  end
+
+   def change_role
+    self.update(role_id: Role.find_by(code: 'author').id)
+    self.save!
   end
 
   private

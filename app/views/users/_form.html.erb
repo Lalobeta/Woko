@@ -40,15 +40,9 @@
   </div>
   
  
-  
-  <div class="form-check" style="margin-bottom: 10px;">
-    <input class="form-check-input" type="checkbox" id="gridCheck1">
-    <label class="form-check-label" for="gridCheck1">
-         Cambiar a autor
-         <% current_user.change_role %>
-    </label>
-    </div>
+ 
       
+  <%= button_to :Autor, action: :change_role , class: 'btn btn-primary' %>
       
 
 

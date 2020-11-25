@@ -1,0 +1,30 @@
+es:
+  commontator:
+    thread:
+      actions:
+        show: Mostrar
+        hide: Cerrar Seccion
+      status:
+        open: Abrir seccion de comentarios
+        hide: Cerrar seccion
+    anonymous: Anonimo
+    comment:
+      actions:
+        new: Nuevo comentario
+        create: Crear
+        cancel: Cancelar
+        edit: Editar
+        delete: Eliminar
+        confirm_delete: "Estas seguro?"
+        update: Actualizar
+      status:
+        replying: Contestando
+        created_at: Creado a las
+        updated_at: Actualizado a las
+        deleted_by: Borrado por
+  will_paginate:
+    page_entries_info:
+      single_page_html: Primer Pagina
+  time:
+    formats:
+      commontator: timestamp 

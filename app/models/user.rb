@@ -1,10 +1,13 @@
 class User < ApplicationRecord
+
   # Relationships
   after_create :set_default_role
   belongs_to :role, optional: true
   has_many :wikis, class_name: 'Wiki'
+  acts_as_commontator 
+  acts_as_voter
   
-  
+  enum role: [:member, :author, :moderator, :admin]
   # Devise
   # Include default devise modules. Others available are:
   # :confirmable :lockable, :timeoutable and :omniauthable
@@ -20,8 +23,15 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+
+  def author?
+    (role == :author || role == 'author')?
+    true:false
+  end
+
   def change_role
-    update(role_id: Role.find_by(code: 'author').id)
+    self.update(role_id: Role.find_by(code: 'author').id)
+    self.save!
   end
 
   private 

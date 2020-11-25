@@ -1,0 +1,12 @@
+<% if current_user.author? %>
+<%=
+  render partial: 'show', locals: {
+    user: @commontator_user,
+    thread: @commontator_thread,
+    comment: @comment,
+    page: @commontator_page,
+    show_all: @commontator_show_all
+  }
+%>
+<%end%>
+<%= javascript_proc %>

@@ -17,6 +17,7 @@
 //= require popper.js/dist/umd/popper
 //= require bootstrap/dist/js/bootstrap
 //= require summernote/summernote-bs4.min
+//= require commontator/application
 
 
 $(document).on('turbolinks:load', function () {
