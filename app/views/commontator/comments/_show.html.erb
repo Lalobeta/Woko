@@ -29,10 +29,10 @@
         id: "commontator-comment-#{comment.id}-edit",
         class: 'edit',
         remote: true
-      ) if comment.can_be_edited_by?(current_user.full_name)
+      ) if comment.can_be_edited_by?(user)
     %>
 
-    <% if comment.can_be_deleted_by?(current_user.full_name) %>
+    <% if comment.can_be_deleted_by?(user) %>
       <% is_deleted = comment.is_deleted? %>
       <% del_string = is_deleted ? 'undelete' : 'delete' %>
       <%= link_to t("commontator.comment.actions.#{del_string}"),
