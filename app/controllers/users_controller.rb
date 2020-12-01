@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-
   def show
     @user = User.find(params[:id])
   end
@@ -22,10 +21,9 @@ class UsersController < ApplicationController
         format.html {render :edit}
       end
     end
-
-
   end
 
+  # DELETE User/:id/delete_image/:image_id
   def delete_image
     image = ActiveStorage::Attachment.find(params[:image_id])
     if current_user == image.record || current_user.admin?
@@ -35,11 +33,14 @@ class UsersController < ApplicationController
       redirect_to root_url, notice:"OPPS, No dijiste la palabra magica!!"
     end
   end
-
-   def change_role
-    self.update(role_id: Role.find_by(code: 'author').id)
-    self.save!
+  
+  # POST user/:id
+  def to_author
+    current_user.author
   end
+
+  
+
 
   private
 
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
       :first_name,
       :last_name,
       :profile_picture,
-      :role_id
+     
       )
   end
 

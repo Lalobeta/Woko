@@ -41,13 +41,12 @@
   
  
  
-      
-  <%= button_to :Autor, action: :change_role , class: 'btn btn-primary' %>
+
       
 
 
   <div class="form-group">
     <%= f.button :submit ,class: 'btn btn-primary' %>
-    <%= link_to 'Cancel', users_path, class: 'btn btn-secondary'%>
+    <%= link_to 'Cancel', {:controller => "home"}, class: 'btn btn-secondary'%>
   </div>
 <% end %>

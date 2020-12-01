@@ -12,11 +12,31 @@
 
 
     <div class="col-8">
-    <% if lookup_context.template_exists?(current_user.role.code, "users/profile", true)%>
-      <%= render partial: "users/profile/#{current_user.role.code}", locals: { user: @user }%>
-    <%else%>
-      <%= render partial: 'users/profile/member', locals: { user: @user} %>
-    <%end%>       
+     <h1><%= @user.full_name %> </h1>
+      
+      <%- if current_user.member? %>
+        <p><strong>Rol: Miembro </strong> </p>
+        <%= link_to 'Quiero ser autor!', to_author_user_path(current_user), class: 'btn btn-sm btn-primary', method: :post %>
+      <%- elsif current_user.author? %>
+        <p><strong>Rol: Autor </strong> </p>
+      <%- elsif current_user.moderator? == :moderator %>
+        <p><strong>Rol: Moderador </strong> </p>
+      <%- elsif current_user.admin? %>
+        <p><strong>Rol: Admin </strong> </p>
+      <%- end %>
+        
+      <h2>Bio </h2>
+        <p> 
+          <%if @user.bio? %>
+          <%= @user.bio.html_safe %>
+          <%else%>
+          <%= @user.bio %>
+          <%end%>
+        </p>
+
+      <%- if current_user.id == @user.id %>
+        <%= link_to 'Editar Perfil', edit_user_path(current_user), class: 'btn btn-primary' %>
+      <%- end %>      
     </div> 
   </div>
 </div>

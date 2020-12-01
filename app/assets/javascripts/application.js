@@ -20,15 +20,7 @@
 //= require commontator/application
 
 
-$(document).on('turbolinks:load', function () {
-  console.log("ready!!");
-  $('[data-provider="summernote"]').each(function () {
-    $(this).summernote({
-      focus: true,
-      height: 300
-    });
-  });
-});
+
 
 
 $(document).on("turbolinks:load", () => {
@@ -47,3 +39,14 @@ $(document).on("turbolinks:load", () => {
     return uploadFields.show();
   });
 })
+
+
+$(document).on('turbolinks:load', function () {
+  console.log("ready!!");
+  $('[data-provider="summernote"]').each(function () {
+    $(this).summernote({
+      focus: true,
+      height: 300
+    });
+  });
+});

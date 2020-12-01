@@ -22,21 +22,23 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                  <%= link_to 'Perfil', user_path(current_user), class: 'dropdown-item' %>
-                 <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+                 <%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
               </div>
             </li>
            
           <% else %>
+
+            
           
             <li class="nav-item">
-            <span class="mb-0 h6">
-              <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+            <span class="mb-0 h5">
+              <%= link_to 'Inicia Sesion', new_user_session_path, class: 'nav-link' %>
             </span>
             </li>
 
             <li class="nav-item">
-            <span class="mb-0 h6">
-              <%= link_to 'Register', new_user_registration_path, class: 'nav-link' %>
+            <span class="mb-0 h5">
+              <%= link_to 'Registrate', new_user_registration_path, class: 'nav-link' %>
             </span>
             </li>
     

@@ -1,38 +1,19 @@
 
 <div class="container">
 
-<h1>Bienvenido</h1>
+<h1 class="centrar-texto">Bienvenido</h1>
 
 <br>
 
-    <section class="contenedor seccion">
-        <table class="table table-grey">
-            <tbody>
-             
-              <tr>
-                
-                <td>  <%= link_to "Español",{:controller => "wikis"},{ class: 'btn btn-outline-danger btn-lg btn-block'}%> </td>
-                <td> <%= link_to "Matematicas", {:controller => "wikis"}, {class: 'btn btn-outline-success  btn-lg btn-block' }%> </td>
-                <td><%= link_to "Biologia", {:controller => "wikis"} , {class: 'btn btn-outline-info  btn-lg btn-block'}%> </td>
-              </tr>
-              <tr>
-               
-                <td> <%= link_to "Idiomas",{:controller => "wikis"},{ class: 'btn btn-outline-danger btn-lg btn-block'}%> </td>
-                <td><%= link_to "Derecho", {:controller => "wikis"}, {class: 'btn btn-outline-success  btn-lg btn-block'} %></td>
-                <td><%= link_to "Fisica", {:controller => "wikis"}, {class: 'btn btn-outline-info btn-lg btn-block'}  %></td>
-              </tr>
-              <tr>
-                
-                <td> <%= link_to "Desarollo",{:controller => "wikis"},{ class: 'btn btn-outline-danger btn-lg btn-block'}%> </td>
-                <td><%= link_to "Portugues",{:controller => "wikis"} ,{ class: 'btn btn-outline-success  btn-lg btn-block'}%></td>
-                <td><%= link_to "Musica", {:controller => "wikis"},{class: 'btn btn-outline-info  btn-lg btn-block'}%></td>
-              </tr>
-            </tbody>
-          </table>
+    <section>
+      <div class="alert alert-success" role="alert">
+        <h1 class="alert-heading">NO NECESITAS REGISTRARTE!!!</h1>
+          <p>Si solo quieres poder leer los articulos puedes hacerlo sin tener que crear una cuenta. Dando click aqui <%= link_to 'Wiki', {:controller => "wikis"}, {class: "alert-link" }%></p>
+        <hr>
+        <p class="mb-0">-Equipo de Desarrollo</p>
+      </div>
 
     </section>
-
-
     <section class="contenedor seccion">
         <h2 class="fw-300 centrar-texto">Mas sobre nosotros</h2>
         
@@ -40,13 +21,13 @@
             <div class="icono">
                
                 <h3 class="encabezado">Quienes somos</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat maxime consectetur libero inventore, earum blanditiis iusto qui deleniti laudantium modi sit corrupti consequatur nulla voluptas. Obcaecati reiciendis quis non doloribus?</p>
+                <p class="text-muted">Somos un grupo de estudiantes de la Facultad de Ingeniería Mecánica y Eléctrica, con una idea de innovar la enseñanza para los alumnos de cualquier nivel, donde estudiantes como nosotros se veían afectados en su forma de estudio de alguna asignatura, creando así Learneen, para mejorar la experiencia de aprendizaje en cada usuario.</p>
             </div>
 
             <div class="icono">
                
                 <h3 class="encabezado">Objetivo</h3>
-                <p>dolor sit amet consectetur adipisicing elit. Sit, eos natus laborum ab cumque tempora earum deserunt. Quo aliquid maiores earum aspernatur amet? Dicta laborum voluptate deserunt praesentium officiis quas?</p>
+                <p class="text-muted">El principal objetivo de este sitio web es implementar nuevas tecnologías que contribuyan al mejoramiento del entorno social, enriqueciendo de conocimiento a los estudiantes y/o cualquier persona con dificultad de aprendizaje.</p>
             </div>
 
         </div>
@@ -86,18 +67,6 @@
     </main>
 
   
-    </section>
-
-    <div class="seccion-inferior contenedor seccion">
-        <section class="blog">
-            <h3 class="fw-300 centrar-texto">Nuestro Blog</h3>
-
-
-
-
-
-
-        </section>
    
         <section class="testimoniales">
             <h3 class="fw-300 centrar-texto">Testimoniales</h3>

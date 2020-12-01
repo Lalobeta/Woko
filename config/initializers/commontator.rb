@@ -32,7 +32,7 @@ Commontator.configure do |config|
   # Arguments: a user (acts_as_commontator)
   # Returns: the user's name (String)
   # Default: ->(user) { I18n.t('commontator.anonymous') } (all users are anonymous)
-  config.user_name_proc = ->(user) { I18n.t('commontator.anonymous') }
+  config.user_name_proc =  lambda { |user| user.full_name } 
 
   # user_link_proc
   # Type: Proc
@@ -151,7 +151,7 @@ Commontator.configure do |config|
   #   :n (never)
   # Note: For moderators, see the next option
   # Default: :l
-  config.comment_deletion = :l
+  config.comment_deletion = :a
 
   # moderator_permissions
   # Type: Symbol
@@ -161,7 +161,7 @@ Commontator.configure do |config|
   #   :d (delete comments and close threads)
   #   :c (close threads only)
   # Default: :d
-  config.moderator_permissions = :d
+  config.moderator_permissions = :e
 
   # comment_voting
   # Type: Symbol
@@ -173,6 +173,7 @@ Commontator.configure do |config|
   #   :ld (likes/dislikes)
   # Default: :n
   config.comment_voting = :ld 
+ 
 
   # vote_count_proc
   # Type: Proc

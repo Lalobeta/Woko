@@ -22,7 +22,7 @@
   <%= render 'wikis/likes', wiki: @wiki %>
 </div>
 
-<div id= "like-link"> 
+<div id= "like-link" > 
   <%= render 'wikis/like_link', wiki: @wiki %>
 </div>
 
@@ -31,11 +31,14 @@
 
 <%= commontator_thread (@wiki) %>
 
-<% if not current_user.author? %>
+<%-  if current_user != nil && current_user.member?   %>
  
-   <%= link_to 'Back', :action => :index %>
-<%else%>
-  <%= link_to 'Back', :action => :index %> |
-  <%= link_to 'Edit', :action => :edit, :id => @wiki.id %>
+   <%= link_to 'Atras', {:action => :index}, {class: "btn btn-secondary btn-lg"} %>
+<% elsif current_user != nil && current_user.author? %>
+  <%= link_to 'Editar',{ :action => :edit, :id => @wiki.id } , {class: "btn btn-primary btn-lg" }%>
+  <%= link_to 'Atras', {:action => :index}, {class: "btn btn-secondary btn-lg"} %> 
+<% elsif current_user == nil %>
+ <%= link_to 'Atras', {:action => :index}, {class: "btn btn-secondary btn-lg"} %> 
+
 <%end%>
 </div>

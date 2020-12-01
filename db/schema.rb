@@ -76,16 +76,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_221653) do
     t.index ["commontable_type", "commontable_id"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true
   end
 
-  create_table "elements", force: :cascade do |t|
-    t.string "element_type"
-    t.text "content"
-    t.integer "wiki_id"
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["wiki_id"], name: "index_elements_on_wiki_id"
-  end
-
   create_table "revisions", force: :cascade do |t|
     t.integer "wiki_id"
     t.integer "number"
@@ -94,8 +84,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_221653) do
     t.datetime "updated_at", null: false
     t.index ["wiki_id"], name: "index_revisions_on_wiki_id"
   end
-
-
 
   create_table "users", force: :cascade do |t|
     t.integer "role", default: 0
@@ -111,7 +99,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_221653) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "author", default: false
     t.text "bio"
     t.string "first_name"
     t.string "last_name"

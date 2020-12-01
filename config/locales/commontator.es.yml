@@ -1,12 +1,13 @@
 es:
   commontator:
+    require_login: Necesitas iniciar sesion
     thread:
       actions:
         show: Mostrar
         hide: Cerrar Seccion
       status:
-        open: Abrir seccion de comentarios
-        hide: Cerrar seccion
+        open: Comentarios
+        hide: 
     anonymous: Anonimo
     comment:
       actions:

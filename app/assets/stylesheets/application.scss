@@ -41,7 +41,7 @@ p {
     background-size: cover;
     content: '';
     display: block;
-    height: 100%;
+    height: 25vh;
     left: 0;
     padding-bottom: 60px;
     position: relative;
@@ -58,4 +58,14 @@ p {
       color: rgba(255,255,255,.80);
     }
   }
+}
+
+
+.bg-black{
+  background: #343a40;
+  font-color: white;
+}
+
+.text-none {
+  text-decoration: none;
 }
