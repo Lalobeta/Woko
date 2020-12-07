@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Se necesita tener instalado ruby 2.7.0 y rails 5.2
 
-Things you may want to cover:
+* Necesitas agregar con yarn jquery, react@^15.3.1
 
-* Ruby version
+* Necesitas hacer una migracion para que las tablas se genere
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Si se necesita correr de manera local se tiene que cambiar la gem pg por sqlite y 
+  cambiar el database.yml ajustarlo para sqlite
